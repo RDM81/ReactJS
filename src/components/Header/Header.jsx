@@ -14,7 +14,7 @@ const Header = () => {
                                 aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
                                 <button type="button" class="btn btn-light"><a class="nav-item nav-link active" href="../paginas/Home.html">HOME</a></button>
                                 <button type="button" class="btn btn-light"><a class="nav-item nav-link" href="../paginas/Biografia.html">BIO <span class="sr-only">(current)</span></a></button>
@@ -24,6 +24,15 @@ const Header = () => {
                                 <button type="button" class="btn btn-light"><a class="nav-item nav-link" href="../paginas/Shop.html">SHOP</a></button>
                             </div>
                         </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="botonCarrito" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Carrito de Compras <span id="carritoCantidad" class="badge badge-light">0</span>
+                            </button>
+                            <div id="carritoProducto" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    
+
+    </div>
+</div>
                     </nav>
                 </div>
             </div>
