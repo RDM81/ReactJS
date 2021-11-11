@@ -17,12 +17,12 @@ const Header = () => {
                             </button>
                         <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <button type="button" className="btn btn-light"><a class="nav-item nav-link active" href="../paginas/Home.html">HOME</a></button>
-                                <button type="button" className="btn btn-light"><a class="nav-item nav-link" href="../paginas/Biografia.html">BIO <span class="sr-only">(current)</span></a></button>
-                                <button type="button" className="btn btn-light"><a class="nav-item nav-link" href="../paginas/Flyers.html">FLYERS</a></button>
-                                <button type="button" className="btn btn-light"><a class="nav-item nav-link" href="../paginas/Fotos.html">FOTOS</a></button>                        
-                                <button type="button" className="btn btn-light"><a class="nav-item nav-link" href="../paginas/Musica.html">MUSICA</a></button>
-                                <button type="button" className="btn btn-light"><a class="nav-item nav-link" href="../paginas/Shop.html">SHOP</a></button>
+                                <button type="button" className="btn btn-light"><a className="nav-item nav-link active" href="../paginas/Home.html">HOME</a></button>
+                                <button type="button" className="btn btn-light"><a className="nav-item nav-link" href="../paginas/Biografia.html">BIO <span className="sr-only">(current)</span></a></button>
+                                <button type="button" className="btn btn-light"><a className="nav-item nav-link" href="../paginas/Flyers.html">FLYERS</a></button>
+                                <button type="button" className="btn btn-light"><a className="nav-item nav-link" href="../paginas/Fotos.html">FOTOS</a></button>                        
+                                <button type="button" className="btn btn-light"><a className="nav-item nav-link" href="../paginas/Musica.html">MUSICA</a></button>
+                                <button type="button" className="btn btn-light"><a className="nav-item nav-link" href="../paginas/Shop.html">SHOP</a></button>
                             </div>
                         </div>
                         <div >
