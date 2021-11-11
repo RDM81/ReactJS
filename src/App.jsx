@@ -8,7 +8,7 @@ const App = () => {
     <Fragment>
     
     <Header />
-    <ItemListContainer greetings />
+    <ItemListContainer greetings= 'Proximamente Shop' />
     
     </Fragment>
   );

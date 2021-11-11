@@ -1,8 +1,9 @@
 import '../ItemListContainer/ItemListContainer.css'
 
-const ItemListContainer = (Props) => {
+const ItemListContainer = ({greetings}) => {
+    // console.log(Props.saludo);
     return(
-        <div className="Titulo_color">Soy la Landing</div>
+        <div className="Titulo_color">{greetings}</div>
     )
 }
 
