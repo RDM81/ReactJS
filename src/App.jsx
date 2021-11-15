@@ -1,6 +1,8 @@
 import { Fragment } from 'react';
 import Header from './components/Header/Header.jsx';
+import ItemCount from './components/ItemCount/ItemCount.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx';
+
 
 
 const App = () => {
@@ -9,6 +11,7 @@ const App = () => {
     
     <Header />
     <ItemListContainer greetings= 'Proximamente Shop' />
+    <ItemCount stock="10" />
     
     </Fragment>
   );
