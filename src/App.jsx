@@ -10,7 +10,7 @@ const App = () => {
     <Fragment>
     
     <Header />
-    <ItemListContainer greetings= 'Proximamente Shop' />
+    <ItemListContainer greetings= 'Bienvenidos a Vinyl Shop' />
     <ItemCount stock="10" />
     
     </Fragment>
