@@ -4,6 +4,8 @@ import { Fragment } from 'react';
 import '../ItemListContainer/ItemListContainer.css';
 import ItemList from './Item/itemList.jsx';
 import  { products } from './Item/items.jsx';
+import ItemDetailsContainer from './ItemDetailsContainer/ItemDetailsContainer';
+
 
 const ItemListContainer = ({greetings}) => {
     const [items, setItems] = useState([]);
@@ -29,7 +31,7 @@ const ItemListContainer = ({greetings}) => {
         <Fragment>
         <h1 className="Titulo_color">{greetings}</h1>
         <ItemList items={items} />
-        
+        <ItemDetailsContainer />
         </Fragment>
 
     )

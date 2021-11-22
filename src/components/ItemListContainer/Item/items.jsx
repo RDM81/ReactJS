@@ -1,11 +1,13 @@
 export const products = [
     {
         id: 1,
-        nombre: 'Kosheen vs Lange vs Andy Moor - Stadium Catch Four (Roberto Di Maggio & Dp Mashup)',
+        autor: 'Kosheen vs Lange vs Andy Moor',
+        nombre: 'Stadium Catch Four',
+        remixer: 'Roberto Di Maggio & Damian Dp',
         precio: 250,
         stock: 10,
-        genero: 'Progressive House',
         img: 'img/vinilo3.jpg',
+        genero: 'Progressive House',
     },
 
     {
