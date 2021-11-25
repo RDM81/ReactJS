@@ -1,3 +1,8 @@
+import image1 from '../../assets/vinilo3.jpg'
+import image2 from '../../assets/vinilo9.jpg'
+import image3 from '../../assets/vinilo11.jpg'
+import image4 from '../../assets/vinilo12.jpg'
+
 export const products = [
     {
         id: 1,
@@ -6,35 +11,97 @@ export const products = [
         remixer: 'Roberto Di Maggio & Damian Dp',
         precio: 250,
         stock: 10,
-        img: 'img/vinilo3.jpg',
-        genero: 'Progressive House',
+        generoId: 'Progressive House',
+        img: image1,
+        
     },
 
     {
         id: 2,
-        nombre: 'Wippenberg vs Mark Vision - Chakarita Gate (Roberto Di Maggio & Dp Mashup)',
+        autor: 'Wippenberg vs Mark Vision',
+        nombre: 'Chakarita Gate',
+        remixer: 'Roberto Di Maggio & Damian Dp',
         precio: 350,
         stock: 7,
-        genero: 'Trance',
-        img: 'img/vinilo9.jpg',
+        generoId: 'Trance',
+        img: image2,
     },
 
     {
         id: 3,
-        nombre: 'Roc Project vs. Reflekt - Never Need To Feel Loved (Roberto Di Maggio Mashup)',
+        autor: 'Roc Project vs. Reflekt',
+        nombre: 'Never Need To Feel Loved',
+        remixer: 'Roberto Di Maggio',
         precio: 450,
         stock: 5,
-        genero: 'Progressive Trance',
-        img: 'img/vinilo11.jpg',
+        generoId: 'Progressive House',
+        img: image1,
     },
 
     {
         id: 4,
-        nombre: 'Darude vs Cirez D - On Sandstorm (Roberto Di Maggio Mashup)',
+        autor: 'Darude vs Cirez D',
+        nombre: 'On Sandstorm',
+        remixer: 'Roberto Di Maggio',
         precio: 300,
         stock: 8,
-        genero: 'Progressive Trance',
-        img: 'img/vinilo12.jpg',
+        generoId: 'Progressive Trance',
+        img: image4,
+    },
+
+    {
+        id: 5,
+        autor: 'Bissen vs Albert Vorme',
+        nombre: 'Washout Falling What',
+        remixer: 'Roberto Di Maggio',
+        precio: 150,
+        stock: 7,
+        generoId: 'Progressive Trance',
+        img: image4,
+    },
+
+    {
+        id: 6,
+        autor: 'Tiesto vs. Andy Moor',
+        nombre: 'Lethal Stadium Four',
+        remixer: 'Roberto Di Maggio',
+        precio: 450,
+        stock: 3,
+        generoId: 'Trance',
+        img: image2,
+    },
+
+    {
+        id: 7,
+        autor: 'Roberto Di Maggio',
+        nombre: 'SH Party',
+        remixer: '2021',
+        precio: 100,
+        stock: 20,
+        generoId: 'Live Sets',
+        img: image3,
+    },
+
+    {
+        id: 8,
+        autor: 'Roberto Di Maggio',
+        nombre: 'MBP Abril',
+        remixer: '2021',
+        precio: 100,
+        stock: 20,
+        generoId: 'Live Sets',
+        img: image3,
+    },
+
+    {
+        id: 9,
+        autor: 'Roberto Di Maggio',
+        nombre: 'Oldschool',
+        remixer: '2021',
+        precio: 500,
+        stock: 20,
+        generoId: 'Live Sets',
+        img: image3,
     },
 ];
 

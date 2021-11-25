@@ -4,10 +4,12 @@ import { Fragment } from 'react';
 import '../ItemListContainer/ItemListContainer.css';
 import ItemList from './Item/itemList.jsx';
 import  { products } from './Item/items.jsx';
-import ItemDetailsContainer from './ItemDetailsContainer/ItemDetailsContainer';
+
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = ({greetings}) => {
+    const{generoId} = useParams()
     const [items, setItems] = useState([]);
     
     useEffect(() => {
@@ -18,20 +20,25 @@ const ItemListContainer = ({greetings}) => {
         });
         traerProductos
             .then((res) => {
-                setItems(res);
+                const filtrado = res.filter(
+                    (prod) => prod.generoId === generoId
+                );
+
+                generoId ? setItems(filtrado) : setItems(res);
+                console.log(filtrado);
                 console.log(res);
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [generoId]);
 
 
     return(
         <Fragment>
         <h1 className="Titulo_color">{greetings}</h1>
         <ItemList items={items} />
-        <ItemDetailsContainer />
+        
         </Fragment>
 
     )

@@ -2,32 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { Fragment } from 'react';
 import ItemDetails from '../ItemDetails/ItemDetails.jsx';
 import  { products } from '../Item/items.jsx';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailsContainer = ({greetings}) => {
-    
-    const [vinyl, setVinyl] = useState([]);
+    const{id} = useParams()
+    const [item, setItem] = useState([]);
     
     useEffect(() => {
-        const getItem = new Promise((resolve, reject) => {
+        const traerProductos = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(products[0]);
+                resolve(products);
             }, 2000);
         });
-        getItem
+        traerProductos
             .then((res) => {
-                setVinyl(res);
-                console.log(res);
-            })
-            .catch((error) => {
+                const producto = res.find(
+                    (prod) => prod.id === parseInt(`${id}`)
+                    
+                );
+                setItem(producto);
+                })
+                .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [id]);
 
 
     return(
         <Fragment>
         <h1 className="Titulo_color">{greetings}</h1>
-        <ItemDetails item = {vinyl} />
+        <ItemDetails item = {item} />
         
         </Fragment>
 
