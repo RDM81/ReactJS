@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailsContainer = ({greetings}) => {
     const{id} = useParams()
+    const [irAlCarrito, setIrAlCarrito] = useState(false)
     const [item, setItem] = useState([]);
     
     useEffect(() => {
@@ -27,11 +28,15 @@ const ItemDetailsContainer = ({greetings}) => {
             });
     }, [id]);
 
+    const onAdd = (cantidad) => {
+        console.log({...item, quantity: cantidad});
+        setIrAlCarrito(true)
+    };
 
     return(
         <Fragment>
         <h1 className="Titulo_color">{greetings}</h1>
-        <ItemDetails item = {item} />
+        <ItemDetails item = {item} onAdd={onAdd} irAlCarrito={irAlCarrito} />
         
         </Fragment>
 

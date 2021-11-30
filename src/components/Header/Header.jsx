@@ -24,6 +24,7 @@ const Header = () => {
                                     <Link to="/genero/Trance" className="nav-item nav-link"><button type="button" className="btn btn-light">TRANCE</button></Link> 
                                     <Link to="/genero/Progressive Trance" className="nav-item nav-link"><button type="button" className="btn btn-light">PROGRESSIVE TRANCE</button></Link>                    
                                     <Link to="/genero/Live Sets" className="nav-item nav-link"><button type="button" className="btn btn-light">LIVE SETS</button></Link>
+                                    <Link to="/cart" className="nav-item nav-link"><button type="button" className="btn btn-light">CART</button></Link>
                                     
                                         
                                 </div>

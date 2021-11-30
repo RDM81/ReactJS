@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from '../../ItemCount/ItemCount';
 
-const ItemDetails = ({ item }) => {
+const ItemDetails = ({ item, onAdd, irAlCarrito }) => {
     console.log(item);
     return (
         <>
@@ -21,7 +22,9 @@ const ItemDetails = ({ item }) => {
                             <p>Stock: {item.stock}</p>
                         </div>
                         <div>
-                        <ItemCount stock={item.stock} />
+                            {irAlCarrito ? (<><Link to="/Cart"> <button> Confirmar Compra</button></Link></>) : (<><ItemCount stock={item.stock} onAdd={onAdd} /></>)}
+                        
+                        
                         </div>
                         
                         </div>

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './components/Cart/Cart.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
 import ItemCount from './components/ItemCount/ItemCount.jsx';
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/genero/:generoId" element={<ItemListContainer greetings= 'Bienvenidos a Vinyl Shop' />} />
         <Route path="/item/:id" element={<ItemDetailsContainer  />} />
         <Route path="/contador" element={<ItemCount stock="10" />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

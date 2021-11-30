@@ -25,8 +25,7 @@ const ItemListContainer = ({greetings}) => {
                 );
 
                 generoId ? setItems(filtrado) : setItems(res);
-                console.log(filtrado);
-                console.log(res);
+                
             })
             .catch((error) => {
                 console.log(error);
