@@ -1,10 +1,12 @@
 import { useContext } from 'react';
+import {useDeleteFromCart} from '../../context/CartContext.jsx'
 import CartContext from '../../context/CartContext';
 // import logoCart from '../Cart/assets/carrito5.png';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const {cart, borrar} = useContext (CartContext)
+    const deleteProduct = useDeleteFromCart()
     return(
         <>
             {cart.map((item) => (
@@ -21,6 +23,10 @@ const Cart = () => {
                         <h5 className="card-title">{item.nombre}</h5>
                         <p className="card-text">Precio: $ {item.precio}</p>
                         <p className="card-text">Genero: {item.generoId}</p>
+                        <p className="card-text">Cantidad: {item.cantidad}</p>
+                        <button onClick={() => deleteProduct(item)}>delete</button>
+                        
+
                         
                         </div>
                         
@@ -34,5 +40,7 @@ const Cart = () => {
         </>
     );
 };
+
+// onClick={() => deleteProduct(item)}
 
 export default Cart;

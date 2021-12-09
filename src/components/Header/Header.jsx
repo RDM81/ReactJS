@@ -2,8 +2,13 @@ import logo from '../assets/rdm200.png';
 import '../Header/Header.css'
 // import Cart from '../Cart/Cart.jsx'
 import { Link } from 'react-router-dom';
+// import { useCart } from '../../context/CartContext';
 
 const Header = () => {
+
+         // const {isCartOpen, setIsCartOpen} = useContext(items)
+        //  const cart = useCart()
+
     return(
         
         <header>
@@ -29,20 +34,30 @@ const Header = () => {
 
                                 <button type="button" className="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg" id="botonCarrito">
                                 Cart  <span id="carritoCantidad" className="badge badge-light">0</span></button>
+                                {/* {
+                                                                        
+                                    cart?.map((item)=> {
 
-                                                <div className="modal fade bd-example-modal-lg" id="carrito" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        const {
+                                            img,
+                                            nombre,
+                                            precio,
+                                            id,
+                                        } = item
+                                        return( */}
+                                          <div className="modal fade bd-example-modal-lg" id="carrito" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div className="modal-dialog modal-lg">
                                                         <div className="modal-content" id="carritoProducto">
                                                             <table className="table table-bordered">
                                                                 <thead>
-                                                                <tr>
+                                                                
+                                                                    
+                                                                            <tr>
                                                                     <th scope="col">#</th>
                                                                     <th scope="col">Nombre</th>
                                                                     <th scope="col">Subtotal x Cantidad</th>
-                                                                    
-                                                                    
-                                                                </tr>
-                                                                </thead>
+                                                                    </tr>
+                                                                    </thead>
                                                                 <tbody id="containerProductos">
 
                                                                 </tbody>
@@ -53,7 +68,15 @@ const Header = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>      
+                                        {/* )
+                                    }
+                                    ) */}
+                                                
+                                                                    
+                                                                    
+                                                                
+                                                                
                                     </Link>
                                     
                                         

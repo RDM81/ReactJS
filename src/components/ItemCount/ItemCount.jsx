@@ -1,8 +1,8 @@
-import { useState,  } from "react";
+import { useState, useContext } from "react";
+import CartContext from '../../context/CartContext.jsx';
 
-
-const ItemCount = ({stock, onAdd}) => {
-
+const ItemCount = ({stock, onAdd, item}) => {
+    const { addToCart } = useContext(CartContext);
     const [number, setNumber] = useState(0);
 
     const onIncrease = () => {
@@ -23,7 +23,7 @@ const ItemCount = ({stock, onAdd}) => {
 
             <button onClick = {onIncrease}>+</button>
             <button onClick = {onDecrease}>-</button>
-            <button disabled={number === 0} onClick = {()=>onAdd(number)}>Agregar al Carrito</button>
+            <button disabled={number === 0} onClick = {()=>addToCart(item, number)}>Agregar al Carrito</button>
         </div>
     )
 };
