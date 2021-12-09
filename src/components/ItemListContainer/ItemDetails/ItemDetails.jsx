@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ItemCount from '../../ItemCount/ItemCount';
 
 const ItemDetails = ({ item, onAdd, irAlCarrito }) => {
-    console.log(item);
+    
     return (
         <>
             <div data-aos="zoom-in" className="card mb-3">
@@ -22,7 +22,10 @@ const ItemDetails = ({ item, onAdd, irAlCarrito }) => {
                             <p>Stock: {item.stock}</p>
                         </div>
                         <div>
-                            {irAlCarrito ? (<><Link to="/Cart"> <button> Confirmar Compra</button></Link></>) : (<><ItemCount stock={item.stock} onAdd={onAdd} /></>)}
+                            {irAlCarrito ? 
+                            (<><Link to="/Cart"> <button> Confirmar Compra</button></Link></>) 
+                            : 
+                            (<><ItemCount stock={item.stock} onAdd={onAdd} item={item} /></>)}
                         
                         
                         </div>

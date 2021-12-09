@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState,  } from "react";
+
 
 const ItemCount = ({stock, onAdd}) => {
-    
+
     const [number, setNumber] = useState(0);
 
     const onIncrease = () => {

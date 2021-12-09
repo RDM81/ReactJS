@@ -1,6 +1,6 @@
 import logo from '../assets/rdm200.png';
 import '../Header/Header.css'
-import Cart from '../Cart/Cart.jsx'
+// import Cart from '../Cart/Cart.jsx'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -17,20 +17,50 @@ const Header = () => {
                                 aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
-                                <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                                <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                     <div className="navbar-nav">
                                     <Link to="/" className="nav-item nav-link active"><button type="button" className="btn btn-light">HOME</button></Link>
                                     <Link to="/genero/Progressive House" className="nav-item nav-link"><button type="button" className="btn btn-light">PROGRESSIVE HOUSE <span className="sr-only">(current)</span></button></Link> 
                                     <Link to="/genero/Trance" className="nav-item nav-link"><button type="button" className="btn btn-light">TRANCE</button></Link> 
                                     <Link to="/genero/Progressive Trance" className="nav-item nav-link"><button type="button" className="btn btn-light">PROGRESSIVE TRANCE</button></Link>                    
                                     <Link to="/genero/Live Sets" className="nav-item nav-link"><button type="button" className="btn btn-light">LIVE SETS</button></Link>
-                                    <Link to="/cart" className="nav-item nav-link"><button type="button" className="btn btn-light">CART</button></Link>
+                                    <Link to="/cart" className="nav-item nav-link">
+                                        <div>
+
+                                <button type="button" className="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg" id="botonCarrito">
+                                Cart  <span id="carritoCantidad" className="badge badge-light">0</span></button>
+
+                                                <div className="modal fade bd-example-modal-lg" id="carrito" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                    <div className="modal-dialog modal-lg">
+                                                        <div className="modal-content" id="carritoProducto">
+                                                            <table className="table table-bordered">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">Nombre</th>
+                                                                    <th scope="col">Subtotal x Cantidad</th>
+                                                                    
+                                                                    
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody id="containerProductos">
+
+                                                                </tbody>
+                                                            </table>
+                                                                
+                                                                <div id='total'>Precio Total: $ <span id="precioFinal"></span></div>
+                                                                <button type="button" className="btn btn-secondary" id="btnConfirmar"> Confirmar Compra</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </Link>
                                     
                                         
                                 </div>
                         </div>
                         <div >
-                            <Cart />
+                                                   
                         <div >
     
 
