@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <>
             <div>
-                <div class="row bg-light">
-                    <div class="col-lg-12 col-xs-12">
+                <div className="row bg-light">
+                    <div className="col-lg-12 col-xs-12">
                         
 
                             <p> <b> SOY EL FOOTER</b></p>

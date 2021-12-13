@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../../ItemCount/ItemCount';
+import CartContext from '../../../context/CartContext.jsx';
 
-const ItemDetails = ({ item, onAdd, irAlCarrito }) => {
-    
+
+
+const ItemDetails = ({ item, onAdd }) => {
+        const { irAlCarrito, terminarCarrito } = useContext(CartContext);
+        console.log(irAlCarrito);
     return (
         <>
             <div data-aos="zoom-in" className="card mb-3">
@@ -23,9 +27,9 @@ const ItemDetails = ({ item, onAdd, irAlCarrito }) => {
                         </div>
                         <div>
                             {irAlCarrito ? 
-                            (<><Link to="/Cart"> <button> Confirmar Compra</button></Link></>) 
+                            (<><Link to="/Cart"> <button onClick={() => terminarCarrito(false)}> Confirmar Compra</button></Link></>) 
                             : 
-                            (<><ItemCount stock={item.stock} onAdd={onAdd} item={item} /></>)}
+                            (<><ItemCount stock={item.stock} addTo={onAdd} item={item} /></>)}
                         
                         
                         </div>

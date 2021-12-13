@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 
 
+
 const CartContext = React.createContext()
 
 
@@ -8,6 +9,9 @@ export const CartProvider = ({ children }) =>{
 
 const [cart, setCart] = useState([])
 const [isCartOpen, setIsCartOpen] = useState(false)
+const [irAlCarrito, setIrAlCarrito] = useState(false)
+
+
 
 const openCart = () => {
     setIsCartOpen(!isCartOpen)
@@ -20,7 +24,14 @@ const isOnCart = (item) => {
     
 }
 
+const terminarCarrito = (b) =>{
+    console.log("terminarCarrito" + irAlCarrito);
+    setIrAlCarrito (b);
+
+}
+
 const addToCart = (item,cantidad) =>{
+    terminarCarrito(true);
    if (isOnCart(item) === -1 ){
         setCart([...cart, {...item, cantidad}]);
         // setCart((current)=> current.concat(item));
@@ -48,10 +59,20 @@ const addToCart = (item,cantidad) =>{
         
         setCart([...cartAux, itemAux2]);
         
-        // setCart(item[0] : item[0].count +1)
-        // setCart(current => ([current[0].count : current[0].count + 1]))
     }
 };
+
+const calcularTotalPorItem = (item) => {
+    return item.precio * item.cantidad
+}
+
+
+    function precioTotal() {
+        let subTotal = cart.reduce((acc, el) => acc + (el.precio * el.cantidad), 0)
+        return subTotal;
+    }
+
+
 
 const deleteFromCart = (item) => {
     setCart(cart.filter(product => product.id !== item.id))
@@ -63,12 +84,15 @@ const borrar = () => {
 
 
 return(
-    <CartContext.Provider value={{addToCart, cart, borrar, isCartOpen, setIsCartOpen, openCart, deleteFromCart}} >
+    <CartContext.Provider value={{addToCart, precioTotal, calcularTotalPorItem, terminarCarrito, irAlCarrito, cart, borrar, isCartOpen, setIsCartOpen, openCart, deleteFromCart}} >
         {children}
     </CartContext.Provider>
 );
 
 };
+
+
+
 
 export function useIsCartOpen() {
     return useContext(CartContext).isCartOpen

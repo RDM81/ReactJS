@@ -45,7 +45,7 @@ const Header = () => {
                                             id,
                                         } = item
                                         return( */}
-                                          <div className="modal fade bd-example-modal-lg" id="carrito" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                          <div className="modal fade bd-example-modal-lg" id="carrito" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div className="modal-dialog modal-lg">
                                                         <div className="modal-content" id="carritoProducto">
                                                             <table className="table table-bordered">
