@@ -83,6 +83,8 @@ const borrar = () => {
 };
 
 
+
+
 return(
     <CartContext.Provider value={{addToCart, precioTotal, calcularTotalPorItem, terminarCarrito, irAlCarrito, cart, borrar, isCartOpen, setIsCartOpen, openCart, deleteFromCart}} >
         {children}
