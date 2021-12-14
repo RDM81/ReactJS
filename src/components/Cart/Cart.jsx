@@ -3,6 +3,7 @@ import {useDeleteFromCart} from '../../context/CartContext.jsx'
 import CartContext from '../../context/CartContext';
 // import logoCart from '../Cart/assets/carrito5.png';
 import { Link } from 'react-router-dom';
+import VolverAlHome from '../VolverAlHome/VolverAlHome.jsx';
 
 const Cart = () => {
     const {cart, borrar, precioTotal, calcularTotalPorItem} = useContext (CartContext)
@@ -39,7 +40,8 @@ const Cart = () => {
             <div className='contentTotal'>
                 <p>Total: $ {precioTotal()}</p>
                 <button onClick={borrar}>Clear</button>
-                <button> <Link to="/" ></Link> Volver al HOME </button>
+                <VolverAlHome />
+                
             </div>
             
         </>

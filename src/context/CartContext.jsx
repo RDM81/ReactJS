@@ -72,7 +72,7 @@ const calcularTotalPorItem = (item) => {
         return subTotal;
     }
 
-
+    
 
 const deleteFromCart = (item) => {
     setCart(cart.filter(product => product.id !== item.id))

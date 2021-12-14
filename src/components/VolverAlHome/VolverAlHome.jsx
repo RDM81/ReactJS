@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import CartContext from '../../context/CartContext';
 // import Cart from "../Cart/Cart";
-import carrito5 from "../../components/assets/carrito5.png"
+
 import { Link } from 'react-router-dom';
 
-const CartWidget = () => {
+const VolverAlHome = () => {
     const {cart} = useContext(CartContext);
 
     return ( 
@@ -13,15 +13,11 @@ const CartWidget = () => {
             <>
             <div>
             
-            <Link to="/cart" className="nav-item nav-link">
-            <img src= {carrito5} alt="" />
-            <span> {cart.length} </span>
-            </Link>
             </div>
             </>  
-        : null
+        : <Link to="/" ><button> Volver al HOME </button> </Link>
             )
 }
 
 
-export default CartWidget
+export default VolverAlHome
