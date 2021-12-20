@@ -1,4 +1,6 @@
+// import { getFirestore, collection, getDocs } from "firebase/firestore";
 import React, { useState, useContext } from "react";
+// import { useEffect } from "react/cjs/react.development";
 
 
 
@@ -8,8 +10,27 @@ const CartContext = React.createContext()
 export const CartProvider = ({ children }) =>{
 
 const [cart, setCart] = useState([])
+// const [items, setItems] = useState([])
 const [isCartOpen, setIsCartOpen] = useState(false)
 const [irAlCarrito, setIrAlCarrito] = useState(false)
+
+// useEffect (() => {
+//     const db = getFirestore();
+//     const ref = collection(db, "products");
+//     const filtrado = generoId ? query(ref, where("generoId", "==", generoId)) : ref;
+//     getDocs(filtrado).then(snapshot => {
+//         const products = snapshot.docs.map((doc) => ( { 
+            
+//                 generoId: doc.generoId,
+//                 ...doc.data(),
+//             }));
+//             setItems(products);
+//         });
+
+//         // const categorias = products.filter(i => i.category === `${generoId}`);
+//         // generoId === undefined ? setItems(products) : setItems(categorias);
+
+// }, [generoId]);
 
 
 

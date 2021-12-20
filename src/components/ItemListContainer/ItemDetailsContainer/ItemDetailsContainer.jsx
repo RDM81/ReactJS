@@ -17,7 +17,7 @@ const ItemDetailsContainer = ({greetings}) => {
         const ref = doc(db, "products", id);
         getDoc (ref).then(snap => {
             setItem({
-                id: snap.id,
+                id: snap.generoId,
                 ...snap.data(),
             })
         })

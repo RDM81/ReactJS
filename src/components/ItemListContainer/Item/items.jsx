@@ -8,6 +8,7 @@ export const products = [
         stock: 10,
         generoId: 'ProgressiveHouse',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010309/samples/vinilo3_nr5ds7.jpg",
+        count: 0,
         
     },
 
@@ -20,6 +21,7 @@ export const products = [
         stock: 7,
         generoId: 'Trance',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010286/samples/vinilo9_fgr57y.jpg",
+        count: 0,
     },
 
     {
@@ -31,6 +33,7 @@ export const products = [
         stock: 5,
         generoId: 'ProgressiveHouse',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010309/samples/vinilo3_nr5ds7.jpg",
+        count: 0,
     },
 
     {
@@ -42,6 +45,7 @@ export const products = [
         stock: 8,
         generoId: 'ProgressiveTrance',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010079/samples/vinilo12_nf2t8h.jpg",
+        count: 0,
     },
 
     {
@@ -53,6 +57,7 @@ export const products = [
         stock: 7,
         generoId: 'ProgressiveTrance',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010079/samples/vinilo12_nf2t8h.jpg",
+        count: 0,
     },
 
     {
@@ -64,6 +69,7 @@ export const products = [
         stock: 3,
         generoId: 'Trance',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010286/samples/vinilo9_fgr57y.jpg",
+        count: 0,
     },
 
     {
@@ -75,6 +81,7 @@ export const products = [
         stock: 20,
         generoId: 'LiveSets',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010276/samples/vinilo11_sooclb.jpg",
+        count: 0,
     },
 
     {
@@ -86,6 +93,7 @@ export const products = [
         stock: 20,
         generoId: 'LiveSets',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010276/samples/vinilo11_sooclb.jpg",
+        count: 0,
     },
 
     {
@@ -97,6 +105,7 @@ export const products = [
         stock: 20,
         generoId: 'LiveSets',
         img: "https://res.cloudinary.com/ddm1qd7pp/image/upload/v1640010276/samples/vinilo11_sooclb.jpg",
+        count: 0,
     },
 ];
 

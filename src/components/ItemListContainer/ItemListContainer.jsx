@@ -18,7 +18,7 @@ const ItemListContainer = ({greetings}) => {
         getDocs(filtrado).then(snapshot => {
             const products = snapshot.docs.map((doc) => ( { 
                 
-                    generoId: doc.generoId,
+                    id: doc.id,
                     ...doc.data(),
                 }));
                 setItems(products);
