@@ -5,7 +5,7 @@ import CartContext from '../../../context/CartContext.jsx';
 
 
 
-const ItemDetails = ({ item, onAdd }) => {
+const ItemDetails = ({ item, onAdd}) => {
         const { irAlCarrito, terminarCarrito } = useContext(CartContext);
         console.log(irAlCarrito);
     return (
