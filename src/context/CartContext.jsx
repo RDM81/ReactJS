@@ -52,7 +52,7 @@ const terminarCarrito = (b) =>{
 }
 
 const addToCart = (item,cantidad) =>{
-    // precioTotal()
+    precioTotal()
     terminarCarrito(true);
    if (isOnCart(item) === -1 ){
         setCart([...cart, {...item, cantidad}]);
