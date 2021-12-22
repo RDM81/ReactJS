@@ -13,6 +13,7 @@ const [cart, setCart] = useState([])
 // const [items, setItems] = useState([])
 const [isCartOpen, setIsCartOpen] = useState(false)
 const [irAlCarrito, setIrAlCarrito] = useState(false)
+const [userEmail, setUserEmail] = useState('');
 
 // useEffect (() => {
 //     const db = getFirestore();
@@ -104,11 +105,15 @@ const borrar = () => {
     setCart([]);
 };
 
+const getUser = (form) => {
+    setUserEmail(form);
+};
+
 
 
 
 return(
-    <CartContext.Provider value={{addToCart, precioTotal, calcularTotalPorItem, terminarCarrito, irAlCarrito, cart, borrar, isCartOpen, setIsCartOpen, openCart, deleteFromCart}} >
+    <CartContext.Provider value={{addToCart, getUser, userEmail, precioTotal, calcularTotalPorItem, terminarCarrito, irAlCarrito, cart, borrar, isCartOpen, setIsCartOpen, openCart, deleteFromCart}} >
         {children}
     </CartContext.Provider>
 );

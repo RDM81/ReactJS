@@ -1,53 +1,78 @@
-import { useContext } from 'react';
-import {useDeleteFromCart} from '../../context/CartContext.jsx'
+import {addDoc, collection, getFirestore} from "firebase/firestore";
+import { useContext, useState } from 'react';
+// import {useDeleteFromCart} from '../../context/CartContext.jsx'
 import CartContext from '../../context/CartContext';
 // import logoCart from '../Cart/assets/carrito5.png';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import VolverAlHome from '../VolverAlHome/VolverAlHome.jsx';
+import CartBuy from '../CartBuy/CartBuy.jsx';
+import Order from "../Order/Order";
 
 const Cart = () => {
-    const {cart, borrar, precioTotal, calcularTotalPorItem} = useContext (CartContext)
-    const deleteProduct = useDeleteFromCart()
+    const {cart, borrar, precioTotal, getUser} = useContext (CartContext)
+    // const deleteProduct = useDeleteFromCart()
+
+    const [goTicket, setGoTicket] = useState(false);
+    const [form, getForm] = useState({nombre: '', email: '' });
+
+    const llenarFormulario = (e) => {
+        const {name, value} = e.target;
+        getForm({
+            ...form,
+            [name]: value,
+        });
+    };
+
+    const date = new Date();
+
+    const finalizar = () => {
+        getUser(form);
+        const db = getFirestore();
+        const ref = collection(db, 'ticket');
+        const newOrder = {
+            buyer: form.email,
+            items: cart,
+            date: date,
+            total: precioTotal(),
+        };
+        addDoc(ref, newOrder);
+        setGoTicket(true);
+        borrar();
+        
+    };
+
     return(
         <>
-            {cart.map((item) => (
-            <div key={item.id}>
-                <div data-aos="zoom-in" className="card mb-3">
-                    <div className="row no-gutters">
-                    <div className="col-md-2">
-                        <Link to={`/item/${item.id}`}>
-                            <img src={item.img} className="card-img" alt={item.nombre} />
-                        </Link>
+            <>
+            {!goTicket ? (
+                <>
+                    {
+                        cart.map((item) => (
+                            <CartBuy key={item.id} item={item} />
+                        ))}
+                    <div className='contentTotal'>
+                        <p>Total: $ {precioTotal()}</p>
+                        <button onClick={borrar}>Clear</button>
+                        <VolverAlHome />
                     </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
-                        <h5 className="card-title">{item.nombre}</h5>
-                        <p className="card-text">Precio Unidad: $ {item.precio}</p>
-                        <p>Precio: $ {calcularTotalPorItem(item)}</p>
-                        <p className="card-text">Genero: {item.generoId}</p>
-                        <p className="card-text">Cantidad: {item.cantidad}</p>
-                        <button onClick={() => deleteProduct(item)}>delete</button>
-                        
+                    <form method="POST" onSubmit={finalizar}>
+                        <input onChange={llenarFormulario} type="email" name="email" placeholder="email"/>
+                        <input onChange={llenarFormulario} type="text" name="nombre" placeholder="nombre"/>
+                        <button disabled={cart?.length === 0 || form.nombre === '' || form.email === ''}> COMPRAR</button>
+                    </form>
+                </>
+            ) : ( 
+                <>
+                    <Order />           
+                </>
 
-                        
-                        </div>
-                        
-                    </div>
-                    </div>
-                </div>
-            </div>
-            ))}
-            <div className='contentTotal'>
-                <p>Total: $ {precioTotal()}</p>
-                <button onClick={borrar}>Clear</button>
-                <VolverAlHome />
-                
-            </div>
-            
+            )}
+            </>
         </>
     );
+
 };
 
-// onClick={() => deleteProduct(item)}
+
 
 export default Cart;
