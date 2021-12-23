@@ -1,9 +1,8 @@
 import React from "react";
 
+
 const Mensaje = ({ord}) => {
-    // const nombreprod = ord.items.map((x) => x.nombre);
     const {buyer} = ord;
-    
     
     return (
         <>
@@ -14,13 +13,14 @@ const Mensaje = ({ord}) => {
                 <p>Fecha: {ord.date}</p>
                 <p>Producto: {ticket.nombre}</p>
                 <p>Email: {buyer}</p>
-             </div>
+                <p>total: {ord.total}</p>
+            </div>
             )
-       
+
             )}
         
-    );
-    </>
+    
+        </>
     )};
 
 export default Mensaje;

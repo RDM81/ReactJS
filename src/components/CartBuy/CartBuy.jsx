@@ -19,7 +19,7 @@ const CartBuy = ({item}) => {
                     <div className="row no-gutters">
                     <div className="col-md-2">
                         
-                            <img src={item.img} className="card-img" alt={item.nombre} />
+                        <img src={item.img} className="card-img" alt={item.nombre} />
                         
                     </div>
                     <div className="col-md-8">
