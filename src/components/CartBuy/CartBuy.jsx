@@ -6,15 +6,15 @@ import CartContext from '../../context/CartContext';
 
 
 
-const CartBuy = () => {
-    const {cart, calcularTotalPorItem} = useContext (CartContext)
+const CartBuy = ({item}) => {
+    const {calcularTotalPorItem} = useContext (CartContext)
     const deleteProduct = useDeleteFromCart()
 
     
     return(
         <>
-            {cart.map((item) => (                
-            <div key={item.id}>
+                           
+            <div>
                 <div data-aos="zoom-in" className="card mb-3">
                     <div className="row no-gutters">
                     <div className="col-md-2">
@@ -39,7 +39,7 @@ const CartBuy = () => {
                     </div>
                 </div>
             </div>
-            ))}
+            
             
         </>
     );
