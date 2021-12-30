@@ -21,14 +21,14 @@ const ItemDetails = ({ item, onAdd}) => {
                         <h5 className="card-title">Autor: <b> {item.autor}</b></h5>
                         <h5 className="card-title">Titulo: <b> {item.nombre}</b></h5>
                         <h5 className="card-title">Remixer: <b> {item.remixer}</b></h5>
-                        <p className="card-text">Precio: $ {item.precio}</p>
-                        <p className="card-text">Genero: {item.generoId}</p>
+                        <p className="card-text"> <b>Precio: $ {item.precio}</b></p>
+                        <p className="card-text"> <b>Genero: {item.generoId}</b></p>
                         <div>
-                            <p>Stock: {item.stock}</p>
+                            <p> <b>Stock: {item.stock}</b></p>
                         </div>
                         <div>
                             {irAlCarrito ? 
-                            (<><Link to="/Cart"> <button onClick={() => terminarCarrito(false)}> Confirmar Compra</button></Link></>) 
+                            (<><Link to="/Cart"> <button onClick={() => terminarCarrito(false)} className='btn btn-dark'> Confirmar Compra</button></Link></>) 
                             : 
                             (<><ItemCount stock={item.stock} addTo={onAdd} item={item} /></>)}
                         

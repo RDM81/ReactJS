@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CartContext from '../../context/CartContext';
-import carrito5 from "../../components/assets/carrito5.png"
+import carrito620 from "../../components/assets/carrito620.png"
 import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
@@ -13,7 +13,7 @@ const CartWidget = () => {
             <div>
             
             <Link to="/cart" className="nav-item nav-link">
-            <img src= {carrito5} alt="" />
+            <img src= {carrito620} alt="" />
             <span> {cart.length} </span>
             </Link>
             </div>

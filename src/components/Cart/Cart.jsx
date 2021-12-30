@@ -47,7 +47,7 @@ const Cart = () => {
                             <CartBuy key={item.id} item={item} />
                         ))}
                     <div className='contentTotal margenes_total'>
-                        <p>Total: $ {precioTotal()}</p>
+                        <p> <b>Total: $ </b>{precioTotal()}</p>
                         <button type="button" className="btn btn-light Clear_Bottom" onClick={borrar}>Clear</button>
                         <VolverAlHome />
                     </div>

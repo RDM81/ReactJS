@@ -44,7 +44,7 @@ const Order = () => {
                 ))}
                 </>
             )}
-            <Link to="/"><button type="button" class="btn btn-dark Margin_Order">HOME</button></Link>
+            <Link to="/"><button type="button" className="btn btn-dark Margin_Order">HOME</button></Link>
         </div>
     );
                 };
