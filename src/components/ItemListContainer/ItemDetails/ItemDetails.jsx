@@ -7,8 +7,9 @@ import CartContext from '../../../context/CartContext.jsx';
 
 const ItemDetails = ({ item, onAdd}) => {
         const { irAlCarrito, terminarCarrito } = useContext(CartContext);
-        console.log(irAlCarrito);
-    return (
+
+        
+        return (
         <>
             <div data-aos="zoom-in" className="card mb-3">
                     <div className="row no-gutters">

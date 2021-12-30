@@ -1,10 +1,6 @@
 import { useContext} from 'react';
 import {useDeleteFromCart} from '../../context/CartContext.jsx'
 import CartContext from '../../context/CartContext';
-// import logoCart from '../Cart/assets/carrito5.png';
-// import { Link } from 'react-router-dom';
-
-
 
 const CartBuy = ({item}) => {
     const {calcularTotalPorItem} = useContext (CartContext)
@@ -13,7 +9,6 @@ const CartBuy = ({item}) => {
     
     return(
         <>
-                           
             <div>
                 <div data-aos="zoom-in" className="card mb-3">
                     <div className="row no-gutters">
@@ -44,7 +39,5 @@ const CartBuy = ({item}) => {
         </>
     );
 };
-
-// onClick={() => deleteProduct(item)}
 
 export default CartBuy;

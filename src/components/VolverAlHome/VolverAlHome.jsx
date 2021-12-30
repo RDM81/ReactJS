@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import CartContext from '../../context/CartContext';
-// import Cart from "../Cart/Cart";
+import "../VolverAlHome/VolverAlHome.css"
 
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const VolverAlHome = () => {
             
             </div>
             </>  
-        : <Link to="/" ><button> Volver al HOME </button> </Link>
+        : <Link to="/" ><button type="button" className="btn btn-light margin_izq"> Volver al HOME </button> </Link>
             )
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import Mensaje from "../Mensaje/Mensaje";
+import "../Order/Order.css"
 import { Link } from "react-router-dom";
 import CartContext from '../../context/CartContext';
 import { collection, getDocs, getFirestore, query, orderBy } from "firebase/firestore";
@@ -31,19 +32,19 @@ const Order = () => {
             });
     }, [email]);
 
-    return (
+    return (  
         <div>
             {order?.length === 0 ? (
-                <h1> Gracias por Comprar</h1>
+                <h1> Gracias por comprar</h1>
             ) : (
                 <>
-                <h2>Vuelva Pronto</h2>
+                <h2 className="Ticket_Mensaje">Gracias por la compra... Enjoy</h2>
                 {order.map((ord)=> (
                     <Mensaje key={ord.id} ord={ord} />
                 ))}
                 </>
             )}
-            <Link to="/"><button>HOME</button> </Link>
+            <Link to="/"><button type="button" class="btn btn-dark Margin_Order">HOME</button></Link>
         </div>
     );
                 };

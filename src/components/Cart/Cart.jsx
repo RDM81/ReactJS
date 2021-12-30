@@ -1,17 +1,13 @@
 import {addDoc, collection, getFirestore} from "firebase/firestore";
 import { useContext, useState } from 'react';
-// import {useDeleteFromCart} from '../../context/CartContext.jsx'
 import CartContext from '../../context/CartContext';
-// import logoCart from '../Cart/assets/carrito5.png';
-// import { Link } from 'react-router-dom';
 import VolverAlHome from '../VolverAlHome/VolverAlHome.jsx';
 import CartBuy from '../CartBuy/CartBuy.jsx';
 import Order from "../Order/Order";
+import "../Cart/Cart.css"
 
 const Cart = () => {
     const {cart, borrar, precioTotal, getUser} = useContext (CartContext)
-    // const deleteProduct = useDeleteFromCart()
-
     const [goTicket, setGoTicket] = useState(false);
     const [form, getForm] = useState({nombre: '', email: '' });
 
@@ -50,15 +46,15 @@ const Cart = () => {
                         cart.map((item) => (
                             <CartBuy key={item.id} item={item} />
                         ))}
-                    <div className='contentTotal'>
+                    <div className='contentTotal margenes_total'>
                         <p>Total: $ {precioTotal()}</p>
-                        <button onClick={borrar}>Clear</button>
+                        <button type="button" className="btn btn-light Clear_Bottom" onClick={borrar}>Clear</button>
                         <VolverAlHome />
                     </div>
-                    <form method="POST" onSubmit={finalizar}>
-                        <input onChange={llenarFormulario} type="email" name="email" placeholder="email"/>
+                    <form method="POST" onSubmit={finalizar} className="margenes_formulario">
+                        <input onChange={llenarFormulario} type="email" name="email" placeholder="email" className="margenes_primerImput"/>
                         <input onChange={llenarFormulario} type="text" name="nombre" placeholder="nombre"/>
-                        <button disabled={cart?.length === 0 || form.nombre === '' || form.email === ''}> COMPRAR</button>
+                        <button disabled={cart?.length === 0 || form.nombre === '' || form.email === ''} className="margen_comprar btn btn-light"> COMPRAR</button>
                     </form>
                 </>
             ) : ( 

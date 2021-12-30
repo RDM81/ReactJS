@@ -4,9 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
-// import { collection, addDoc, getFirestore } from 'firebase/firestore';
-// import { products } from './components/ItemListContainer/Item/items';
-
 
 
 const firebaseConfig = {
@@ -21,10 +18,6 @@ const firebaseConfig = {
 
 
 initializeApp(firebaseConfig);
-
-// const db = getFirestore();
-// const ref = collection (db, "products");
-// products.map(product => addDoc(ref, product));
 
 
 ReactDOM.render(
